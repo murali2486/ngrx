@@ -1,0 +1,9 @@
+<div class="row">
+    <h3>{{title$ | async}}</h3>
+    <div class="row">        
+        <input type="number" class="form-control col-3" [(ngModel)]="value" />        
+    </div>
+    <button class="btn btn-primary" (click)="onCustomIncrement()">Custom increment</button>
+    <button (click)="changeTitle()" class="btn btn-danger">Change Title</button>
+</div>
+        
