@@ -1,5 +1,6 @@
+<button class="btn btn-primary" (click)="loadAddPost()">Add post</button>
 <div class="row">
-    <div class="container-fluid">
+    <div class="container-fluid col-md-8">
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -22,5 +23,8 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+    <div class="col-md-4">
+        <router-outlet></router-outlet>
     </div>
 </div>

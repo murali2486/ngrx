@@ -1,0 +1,32 @@
+<form [formGroup]="addPostForm" (ngSubmit)="addPost()">
+    <div class="col-md-12 mb-3">
+           <label class="label col-md-4">Title</label>
+           <input type="text" class="form-control" formControlName="title"/>
+           <div *ngIf="addPostForm.get('title')?.touched && !addPostForm.get('title')?.valid">
+            <div *ngIf="addPostForm.controls['title'].errors">
+                <div *ngIf="addPostForm.controls['title'].errors['required']">
+                    Title is required
+                </div>
+                <div *ngIf="addPostForm.controls['title'].errors['minlength']">
+                    Minimum 6 letters required
+                </div>
+            </div>                
+           </div> 
+    </div>
+    <div class="col-md-12 mb-3">
+        <label class="label col-md-4">Description</label>
+        <textarea formControlName="description" class="form-control">
+        </textarea>
+        <div *ngIf="addPostForm.get('description')?.touched && !addPostForm.get('description')?.valid">
+            <div *ngIf="addPostForm.controls['description'].errors">
+                <div *ngIf="addPostForm.controls['description'].errors['required']">
+                    Description is required
+                </div>
+                <div *ngIf="addPostForm.controls['description'].errors['minlength']">
+                    Minimum 6 letters required
+                </div>
+            </div>                
+           </div> 
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="addPostForm.invalid">Add Post</button>
+</form>

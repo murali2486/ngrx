@@ -1,4 +1,5 @@
-import { Posts } from "src/app/posts/models/posts.model";
+import { Posts } from "src/app/models/posts.model";
+
 
 
 export interface PostState {
