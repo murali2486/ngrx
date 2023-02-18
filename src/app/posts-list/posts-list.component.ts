@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { getPosts } from 'src/app/counter/state/posts.selectors';
+
 import { AppState } from 'src/app/state/app.state';
 import { Posts } from '../models/posts.model';
+import { getPosts } from './state/posts.selectors';
 
 @Component({
   selector: 'app-posts-list',

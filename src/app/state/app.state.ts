@@ -1,7 +1,8 @@
 import { counterReducer } from "../counter/state/counter.reducer";
 import { counterState } from "../counter/state/counter.state";
-import { PostsReducer } from "../counter/state/posts.reducer";
-import { PostState } from "../counter/state/posts.state";
+import { PostsReducer } from "../posts-list/state/posts.reducer";
+import { PostState } from "../posts-list/state/posts.state";
+
 
 export interface AppState{
     counter: counterState,
