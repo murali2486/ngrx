@@ -1,0 +1,32 @@
+<form [formGroup]="editPostForm" (ngSubmit)="updatePost()">
+    <div class="col-md-12 mb-3">
+           <label class="label col-md-4">Title</label>
+           <input type="text" class="form-control" formControlName="title"/>
+           <div *ngIf="editPostForm.get('title')?.touched && !editPostForm.get('title')?.valid">
+            <div *ngIf="editPostForm.controls['title'].errors">
+                <div *ngIf="editPostForm.controls['title'].errors['required']">
+                    Title is required
+                </div>
+                <div *ngIf="editPostForm.controls['title'].errors['minlength']">
+                    Minimum 6 letters required
+                </div>
+            </div>                
+           </div> 
+    </div>
+    <div class="col-md-12 mb-3">
+        <label class="label col-md-4">Description</label>
+        <textarea formControlName="description" class="form-control">
+        </textarea>
+        <div *ngIf="editPostForm.get('description')?.touched && !editPostForm.get('description')?.valid">
+            <div *ngIf="editPostForm.controls['description'].errors">
+                <div *ngIf="editPostForm.controls['description'].errors['required']">
+                    Description is required
+                </div>
+                <div *ngIf="editPostForm.controls['description'].errors['minlength']">
+                    Minimum 6 letters required
+                </div>
+            </div>                
+           </div> 
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="editPostForm.invalid">Update Post</button>
+</form>

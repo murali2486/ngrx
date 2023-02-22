@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppReducer } from './state/app.state';
 import { AddPostComponent } from './posts-list/add-post/add-post.component';
+import { EditPostComponent } from './posts-list/edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AddPostComponent } from './posts-list/add-post/add-post.component';
     PostsListComponent,
     HomeComponent,
     AppComponent,
-    AddPostComponent
+    AddPostComponent,
+    EditPostComponent
   ],
   imports: [
     BrowserModule,
