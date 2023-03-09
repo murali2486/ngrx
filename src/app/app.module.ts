@@ -22,7 +22,7 @@ import { AppReducer } from './state/app.state';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(AppReducer),
+    StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({      
       logOnly: false,
       autoPause: true,
