@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { Posts } from 'src/app/models/posts.model';
 
 import { AppState } from 'src/app/state/app.state';
-import { Posts } from '../models/posts.model';
-import { getPosts } from './state/posts.selectors';
+import { deletePost } from '../state/posts.actions';
+import { getPosts } from '../state/posts.selectors';
+
 
 @Component({
   selector: 'app-posts-list',
@@ -22,5 +24,10 @@ export class PostsListComponent implements OnInit {
 
   loadAddPost(){
     this.router.navigate(['/posts/add']);
+  }
+
+  deletePost(id: any){
+    this.store.dispatch(deletePost({id}));
+    this.router.navigate(['posts']);
   }
 }
